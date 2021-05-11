@@ -40,8 +40,6 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">Hotel Annapurna</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -94,68 +92,36 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>Stay with Us</h2>
-        <p>Following are our offerings. Please have a look and see what you like.</p>
-        <p><a href="book.html" class="get-started-btn">Book now</a></p>
+        <h2>Gallery</h2>
+        <p>Some glimpses of amazing events in our hotel.</p>
       </div>
     </div><!-- End Breadcrumbs -->
-    <section id="courses" class="courses">
-      <div class="container" data-aos="fade-up">
+    
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+    <div id="gallery" class="row" class="carousel slide" data-bs-ride="carousel"> 
+        <!-- Carousel indicators -->
+    
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+    
+    
+            <?php
+            $class_active = true;
+            $dirname = "assets/gallery";
+            $images = glob($dirname."*.jpg");
+            foreach($images as $image) {
+              ?>
+               <div class="item <?php if($class_active == true){ echo 'active' ; $class_active = false} ?>"><img src="<?php echo $dirname.$image; ?>" /></div>
+              <?php
+            }
+    
+        <!-- Carousel controls --> 
+        <a class="carousel-control-prev" type="button" data-bs-target="#gallery" data-bs-slide="prev"> <img src="/assets/img/icon-chevron-left-512.png" style="height: 50px;width: 50px;" alt="Left"/></a> 
+    <a class="carousel-control-next" type="button" data-bs-target="#gallery" data-bs-slide="next"> <img src="/assets/img/icon-chevron-right-512.png" style="height: 50px; width: 50px; "alt="Right"/></a> 
+    </div>
+    </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-              <img src="assets/img/room-1.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Royalty</h4>
-                  <p class="price">from $650</p>
-                </div>
-
-                <h3><a href="presidential-suite.html">Presidential Suite</a></h3>
-
-
-              </div>
-            </div>
-          </div> <!-- End Room Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="course-item">
-              <img src="assets/img/room-2.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Executive</h4>
-                  <p class="price">from $500</p>
-                </div>
-
-                <h3><a href="executive-suite.html">Regency Executive Suite</a></h3>
-               
-
-              </div>
-            </div>
-          </div> <!-- End Room Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="course-item">
-              <img src="assets/img/room-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Luxury</h4>
-                  <p class="price">from $380</p>
-                </div>
-
-                <h3><a href="king-suite.html">Regency King Suite</a></h3>
-             
-
-              </div>
-            </div>
-          </div> <!-- End Room Item-->
-
-        </div>
-
-      </div>
-    </section><!-- End Room Section -->
+ 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
