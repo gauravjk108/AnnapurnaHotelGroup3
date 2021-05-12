@@ -80,22 +80,18 @@
                 <p>Please write a short review for other customers.</p>
             </div>
         </div><!-- End Breadcrumbs -->
-        <section id="contact" class="contact">
+        <section id="review" class="contact">
 
             <div class="container" data-aos="fade-up">
 
                 <form action="forms/review.php" method="post" role="form" class="php-email-form">
                     <div class="row mt-5">
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Name(Optional)">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name (Optional)">
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="occupation" id="occupation" placeholder="Occupation"
-                                required>
-                        </div>
-                        <div class="form-group mt-3">
-                            <textarea class="form-control" name="review" rows="5" placeholder="Write your review here....."
-                                required></textarea>
+                            <textarea class="form-control" name="review" rows="5"
+                                placeholder="Write your review here....." required></textarea>
                         </div>
                         <div class="rating">
                             <input type="radio" name="rating" value="5" id="5">
@@ -118,6 +114,48 @@
                 </form>
 
             </div>
+        </section>
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs" data-aos="fade-up">
+            <div class="container">
+                <h2>Customer Reviews</h2>
+                <p>Here is what our previous customer have to say about it.</p>
+            </div>
+        </div><!-- End Breadcrumbs -->
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-3">
+
+                </div>
+            </div>
+        </div>
+        <section id="userreviews" class="contact">
+            <div id="ratings" class="row" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel indicators -->
+
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                    <div class="row mt-5">
+                        <a class="col-lg-1" type="button" data-bs-target="#ratings" data-bs-slide="prev"> <img
+                                src="/assets/img/icon-chevron-left-512.png" style="height: 50px;width: 50px;"
+                                alt="Left" /></a>
+                        <div class="col-lg-5">
+                            <h2>Anonymous</h2>
+                            <i class="star-ratings-css" title="4"></i>
+                            <p>Awesome ambience with decent service👍</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <h2>Gaurav Kunwar</h2>
+                            <i class="star-ratings-css" title="5"></i>
+                            <p>I celebrated my parent's silver jubliee of marriage here and was very happy with the event they were able to organize. The guests were happy which makes us happy as a host. I would like to thank Annapurna Hotel for their awesome service and would recommend it to anyone. Also, their response brom the website booking was very quick and everything was arranged asap.</p>
+                        </div>
+
+
+                        <!-- Carousel controls -->
+                        <a class="col-lg-1" type="button" data-bs-target="#ratings" data-bs-slide="next"> <img
+                                src="/assets/img/icon-chevron-right-512.png" style="height: 50px; width: 50px; "
+                                alt="Right" /></a>
+                    </div>
         </section>
 
 
