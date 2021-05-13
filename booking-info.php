@@ -4,7 +4,7 @@
     require_once('connection.php');
     if(isset($_GET['del'])){
         $del = $_GET['del'];
-        $q = "DELETE FROM room_details WHERE room_details.id = $del";
+        $q = "DELETE FROM bookingdata WHERE bookingdata.id = $del";
         $run = mysqli_query($conn, $q);
     }
 ?>
@@ -40,7 +40,8 @@
 
 </head>
 <body>   
-<header id="header" class="fixed-top">
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
             <h1 class="logo me-auto"><a href="index.php">Hotel Admin</a></h1>
@@ -48,29 +49,27 @@
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a class = "active" href="all-room.php">All rooms</a></li>
-                    <li class="dropdown"><a class="" href="#"><span>Form Information</span><i class="bi bi-chevron-down"></i></a>
+                    <li><a  href="all-room.php">All rooms</a></li>
+                    <li class="dropdown"><a class="active" href="#"><span>Form Information</span><i class="bi bi-chevron-down"></i></a>
                         <ul>
-                          <li><a href="booking-info.php">Bookings</a></li>
-                          <li><a class="" href="contact-details.php">Contact Details</a></li>
+                          <li><a class="active" href="booking-info.php">Bookings</a></li>
+                          <li><a href="contact-details.php">Contact Details</a></li>
                           <li><a href="enquiry-details.php">Enquiry Details</a></li>
                           <li><a href="feedback-manager.php">Feedbacks</a></li>
-                          
                         </ul>
-                        <li><a href="login.php">Logout</a></li>
                       </li>
 
         </div>
-    </header><!-- End Header -->      
-    <div class="breadcrumbs" data-aos="fade-in">
+    </header><!-- End Header -->   
+    <main>
+        <div class="breadcrumbs" data-aos="fade-in">
             <div class="container">
-              <h2>Room Details</h2>
-              <p>Edit or Delete Rooms</p>
+              <h2>Booking Details</h2>
+              <p>Follwing are the details of users wanting to book.</p>
               </div>
           </div>
           <section>
-            
-                    <div class="container-fluid body-section container">
+                    <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 
@@ -78,27 +77,33 @@
                                     <div class="container" data-aos="fade-up">
                                         <table class="table">
                                             <thead style="color: #daa520;">
-                                                <th><center>ID</center></th>
-                                                <th><center>Room Title</center></th>
-                                                <th><center>Price</center></th>
-                                                <th><center>Edit</center></th>
-                                                <th><center>Delete</center></th>
+                                                <th><center>Name</center></th>
+                                                <th><center>Phone no.</center></th>
+                                                <th><center>Email</center></th>
+                                                <th><center>Check in</center></th>
+                                                <th><center>Check out</center></th>
+                                                <th><center>Expected guests</center></th>
+                                                <th><center>Selected Suite</center></th>
+                                                <th> Delete</th>
                                             </thead>
                                             <tbody>
                                                  <?php
-                                                    $q = "SELECT * FROM room_details ORDER BY room_details.id ASC";
+                                                    $q = "SELECT * FROM bookingdata ORDER BY bookingdata.id ASC";
                                                     $run = mysqli_query($conn, $q);
                                                     if(mysqli_num_rows($run) > 0){
                                                         while($row = mysqli_fetch_array($run)){
                                                     
                                                 ?> 
                                                 <tr>
-                                                    <td><center><?php echo $row['id']; ?></center></td>
-                                                    <td><center><?php echo $row['title']; ?></center></td>
-                                                    <td class="text-primary"><center><?php echo $row['price']; ?> /-</center></td>
-                                                    <td><center><a href="edit-room.php?id=<?php echo $row['id']; ?>"><i class="ri-edit-line"></i></a></center></td>
-                                                    <td><center><a href="all-room.php?del=<?php echo $row['id']; ?>"><i class="ri-delete-bin-line"></i></a></center></td>
-                                                </tr>
+                                                    <td><center><?php echo $row['name']; ?></center></td>
+                                                    <td><center><?php echo $row['phonenumber']; ?></center></td>
+                                                    <td><center><?php echo $row['email']; ?> </center></td>
+                                                    <td><center><?php echo $row['checkin']; ?> </center></td>
+                                                    <td><center><?php echo $row['checkout']; ?> </center></td>
+                                                    <td><center><?php echo $row['guestnum']; ?> </center></td>
+                                                    <td><center><?php echo $row['suite']; ?> </center></td>
+                                                    <td><center><a href="booking-info.php?del=<?php echo $row['id']; ?>"><i class="ri-delete-bin-line"></i></a></center></td>
+                                                    </tr>
                                                  <?php 
                                                          }
                                                     }

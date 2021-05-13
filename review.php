@@ -87,7 +87,7 @@
                 <form action="reviewform.php" method="post" role="form" class="php-email-form">
                     <div class="row mt-5">
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Name (Optional)">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
                         </div>
                         <div class="form-group mt-3">
                             <textarea class="form-control" name="review" rows="5"
@@ -136,19 +136,27 @@
                 <!-- Wrapper for carousel items -->
                 <div class="carousel-inner">
                     <div class="row mt-5">
+                    <?php
+    require_once('connection.php');
+    $q = "SELECT * FROM userreview ORDER BY userreview.id ASC";
+    $run = mysqli_query($conn, $q);
+    $count = 0;
+    if(mysqli_num_rows($run) > 0){
+        while($row = mysqli_fetch_array($run)){
+  ?>
                         <a class="col-lg-1" type="button" data-bs-target="#ratings" data-bs-slide="prev"> <box-icon type='solid' name='chevron-left-square'></box-icon> </a>
                         <div class="col-lg-5">
-                            <h2>Anonymous</h2>
-                            <i class="star-ratings-css" title="4"></i>
-                            <p>Awesome ambience with decent service👍</p>
+                            <h2><?php echo $row['name']; ?></h2>
+                            <i class="star-ratings-css" title="<?php echo $row['rating']; ?>"></i>
+                            <p><?php echo $row['review']; ?></p>
                         </div>
-                        <div class="col-lg-5">
-                            <h2>Gaurav Kunwar</h2>
-                            <i class="star-ratings-css" title="5"></i>
-                            <p>I celebrated my parent's silver jubliee of marriage here and was very happy with the event they were able to organize. The guests were happy which makes us happy as a host. I would like to thank Annapurna Hotel for their awesome service and would recommend it to anyone. Also, their response brom the website booking was very quick and everything was arranged asap.</p>
-                        </div>
+                       
 
 
+                        <?php
+        }
+    }
+  ?>
                         <!-- Carousel controls -->
                         <a class="col-lg-1" type="button" data-bs-target="#ratings" data-bs-slide="next"> <i class="bx bx-chevron-right"></a>
                     </div>

@@ -86,59 +86,44 @@
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="course-item">
-              <img src="assets/img/room-1.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Royalty</h4>
-                  <p class="price">from $650</p>
-                </div>
-
-                <h3><a href="presidential-suite.php">Presidential Suite</a></h3>
+        <?php
+    require_once('connection.php');
+    $q = "SELECT * FROM room_details ORDER BY room_details.id ASC";
+    $run = mysqli_query($conn, $q);
+    $count = 0;
+    if(mysqli_num_rows($run) > 0){
+        while($row = mysqli_fetch_array($run)){
+  ?>
 
 
-              </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="course-item">
+          <img src="assets/img/<?php echo $row['img_name']; ?>" class="img-fluid" alt="...">
+          <div class="course-content">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h4>Royalty</h4>
+              <p class="price">from <?php echo $row['price']; ?></p>
             </div>
-          </div> <!-- End Room Item-->
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-            <div class="course-item">
-              <img src="assets/img/room-2.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Executive</h4>
-                  <p class="price">from $500</p>
-                </div>
+            <h3><a href="room_details.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></h3>
+            <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem
+              tempore.</p>
 
-                <h3><a href="executive-suite.php">Regency Executive Suite</a></h3>
-               
-
-              </div>
-            </div>
-          </div> <!-- End Room Item-->
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="course-item">
-              <img src="assets/img/room-3.jpg" class="img-fluid" alt="...">
-              <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Luxury</h4>
-                  <p class="price">from $380</p>
-                </div>
-
-                <h3><a href="king-suite.php">Regency King Suite</a></h3>
-             
-
-              </div>
-            </div>
-          </div> <!-- End Room Item-->
-
+          </div>
         </div>
+      </div> <!-- End Room Item-->
 
-      </div>
-    </section><!-- End Room Section -->
-  </main><!-- End #main -->
+      
+
+    <?php
+        }
+    }
+  ?>
+  
+  </div>
+  </div>
+</section><!-- End Room Section -->
+</main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">

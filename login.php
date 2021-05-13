@@ -34,7 +34,7 @@
 </head>
 <body>
   <main id="main">
-    <table class="align-middle" width="100%" height="600px">
+  <table class="align-middle" width="100%" height="600px">
       <tbody>
       <tr>
           <td class="col-lg-3" height="25%"></td>
@@ -48,33 +48,58 @@
               <div class="container">
                 <h2>Admin Login</h2>
                 <div class="text-center text-md-start" >
-                   <a href="index.php" style="color: white;"> <i class="bx bx-chevron-left"></i>Back to home</a>
+                   <a href="index.html" style="color: white;"> <i class="bx bx-chevron-left"></i>Back to home</a>
                 </div>
               </div>
             </div><!-- End Breadcrumbs -->
-            <section id="login" class="contact">
-            <form action="forms/login.php" method="get" role="form" class="php-email-form">
-                    <div class="form-group">
-                      <input type="text" name="username" class="form-control" id="username" placeholder="Username"
-                        required>
-                    </div>
-                    <div class="form-group">
-                      <input type="password" name="password" class="form-control" id="password" placeholder="Password"
-                        required>
-                    </div>
-              <div class="text-center mt-3"><button class="login-btn" type="submit">Login</button></div></li>
-              </form>
-            </section>
-          </td>
-          <td class="col-lg-3"></td>
-      </tr>
-      <tr>
-          <td class="col-lg-3" height="25%"></td>
-          <td class="col-lg-6"></td>
-          <td class="col-lg-3"></td>
-      </tr>
-      </tbody></table>
+            
+           
 </main>
+ <section id="login" class="contact">
+ <?php
+ob_start();
+session_start();
+require_once('connection.php');
+
+if(isset($_POST['submit'])){
+    $username = mysqli_real_escape_string($conn,strtolower($_POST['username']));
+    $password = mysqli_real_escape_string($conn,$_POST['password']);
+    
+    if($username == "admin" && $password == "admin"){
+        $_SESSION['username'] = $username;
+        $_SESSION['role'] = "admin";
+        header('Location: all-room.php');
+    }
+    else{
+        $error = "Wrong Username or Password";
+    }
+}
+
+?>
+             <div class="container">
+      <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+              <form class="form-signin animated shake" action="" method="post">
+                <label for="inputEmail" class="sr-only">Username</label>
+                <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                <div class="checkbox">
+                  <label>
+                    <?php
+                      if(isset($error)){
+                          echo "$error";
+                      }
+                      ?>
+                  </label>
+                </div>
+                <input type="submit" name="submit" value="Sign In" class="btn btn-lg btn-primary btn-block">
+              </form>
+          </div>
+          <div class="col-md-4"></div>
+      </div>
+    </div> <!-- /container -->
   <footer>
     <div class="container d-md-flex py-4">
 

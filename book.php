@@ -135,8 +135,9 @@
                             </div>
                             <div class="my-3">
                                 <div class="loading">Loading</div>
-                                <div class="error-message"></div>
+                               
                                 <div class="sent-message">Your booking has been made. Thank you!</div>
+                                <div class="error-message"></div>
                             </div>
                             <div class="text-center mt-3"><button type="submit">Confirm Booking</button></div>
                 </form>

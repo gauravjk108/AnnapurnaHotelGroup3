@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Regency Executive Suite | Annapurna Hotel</title>
+  <title>Rooms | Annapurna Hotel</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -61,7 +61,7 @@
               <li><a href="feedback.php">Offer Feedback</a></li>
             </ul>
           </li>
-          <li><a href="login.php"><span>Admin</span></a>
+            <li><a href="login.php"><span>Admin</span></a>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -72,63 +72,66 @@
   </header><!-- End Header -->
 
   <main id="main">
+  <div class="breadcrumbs" data-aos="fade-in">
+  <div class="container">
+  <?php
+    require_once('connection.php');
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $q = "SELECT * FROM room_details WHERE room_details.id = $id";
+        $run = mysqli_query($conn, $q);
+        $row = mysqli_fetch_array($run);
+    }
+?>
+    <h2><?php echo $row['title']; ?></h2>
+  </div>
+</div><!-- End Breadcrumbs -->
 
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs" data-aos="fade-in">
-      <div class="container">
-        <h2>Regency Executive Suite</h2>
+
+<!-- ======= Cource Details Section ======= -->
+<section id="course-details" class="course-details">
+  <div class="container" data-aos="fade-up">
+
+    <div class="row">
+      <div class="col-lg-8">
+        <img src="assets/img/<?php echo $row['img_name']; ?>" class="img-fluid" alt="">
+        <h3><?php echo $row['title']; ?></h3>
+        <p>
+        <?php echo $row['description']; ?></p>
       </div>
-    </div><!-- End Breadcrumbs -->
+      <div class="col-lg-4">
 
-    <!-- ======= Cource Details Section ======= -->
-    <section id="course-details" class="course-details">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-8">
-            <img src="assets/img/room-2.jpg" class="img-fluid" alt="">
-            <h3>Regency Executive Suite</h3>
-            <p>
-              Local artifacts and traditional Tibetan hand-woven carpet complement luxurious interiors, including
-              parlor, dining table for six, private study with high-speed Internet access, granite bath with jetted spa
-              tub and walk-in shower and separate bedroom with a king bed all within 120 square meters. Enjoy mineral
-              water and fruit platter upon arrival, plus luxuries such as butler service on request and Regency Club
-              lounge. This is a premium suite. See World of Hyatt program terms for upgrade eligibility.
-          </div>
-          <div class="col-lg-4">
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5>Feature #1</h5>
-              <p></p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5>Feature #2</h5>
-              <p></p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5>Feature #3</h5>
-              <p></p>
-            </div>
-
-            <div class="course-info d-flex justify-content-between align-items-center">
-              <h5>Feature #4</h5>
-              <p></p>
-            </div>
-            <div class=" d-flex justify-content-between align-items-center">
-              <a href="book.php" class="get-started-btn">Book now</a>
-            </div>
-          </div>
+        <div class="course-info d-flex justify-content-between align-items-center">
+          <h5><?php echo $row['feature1']; ?></h5>
+          <p></p>
         </div>
 
+        <div class="course-info d-flex justify-content-between align-items-center">
+          <h5><?php echo $row['feature2']; ?></h5>
+          <p></p>
+        </div>
+
+        <div class="course-info d-flex justify-content-between align-items-center">
+          <h5><?php echo $row['feature3']; ?></h5>
+          <p></p>
+        </div>
+
+        <div class="course-info d-flex justify-content-between align-items-center">
+          <h5><?php echo $row['feature4']; ?></h5>
+          <p></p>
+        </div>
+        <div class=" d-flex justify-content-between align-items-center">
+          <a href="book.php" class="get-started-btn">Book now</a>
+        </div>
       </div>
-    </section><!-- End Cource Details Section -->
+    </div>
+
+  </div>
+</section><!-- End Cource Details Section -->
 
 
-  </main><!-- End #main -->
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
+</main><!-- End #main -->
+<footer id="footer">
 
     <div class="footer-top">
       <div class="container">
