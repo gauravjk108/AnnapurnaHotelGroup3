@@ -49,7 +49,7 @@
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Rooms</a></li>
+                    <li><a href="all-room.php">Rooms</a></li>
                     <li class="dropdown"><a class="active" href="#"><span>Form Information</span><i class="bi bi-chevron-down"></i></a>
                         <ul>
                           <li><a href="booking-info.php">Bookings</a></li>
@@ -57,6 +57,7 @@
                           <li><a class="active" href="enquiry-details.php">Enquiry Details</a></li>
                           <li><a href="feedback-manager.php">Feedbacks</a></li>
                         </ul>
+                        <li><a href="login.php">Logout</a></li>
                       </li>
 
         </div>
@@ -78,7 +79,7 @@
                                         <table class="table">
                                             <thead style="color: #daa520;">
                                                 <th><center>Planned Date</center></th>
-                                                <th><center>Event Name</center></th>
+                                            
                                                 <th><center>Email</center></th>
                                                 <th><center>Phone no.</center></th>
                                                 <th><center>Event Duration</center></th>
@@ -97,14 +98,14 @@
                                                 ?> 
                                                 <tr>
                                                     <td><center><?php echo $row['checkin']; ?></center></td>
-                                                    <td><center><?php echo $row['event']; ?> </center></td>
+                                                   
                                                     <td><center><?php echo $row['email']; ?> </center></td>
                                                     <td><center><?php echo $row['phonenumber']; ?> </center></td>
                                                     <td><center><?php echo $row['duration']; ?></center></td>
                                                     <td><center><?php echo $row['capacity']; ?> </center></td>
                                                     <td><center><?php echo $row['site']; ?> </center></td>
                                                     <td><center><?php echo $row['description']; ?> </center></td>
-                                                    <td><center><a href="enquiry-details.php?del=<?php echo $row['id']; ?>"><i class="ri-delete-bin-line"></i></a></center></td>
+                                                    <td><a href="enquiry-details.php?del=<?php echo $row['id']; ?>"><i class="ri-delete-bin-line"></i></a></td>
                                                     </tr>
                                                 <?php 
                                                          }
@@ -149,7 +150,7 @@
 <!-- Vendor JS Files -->
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
+
 <script src="assets/vendor/purecounter/purecounter.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 

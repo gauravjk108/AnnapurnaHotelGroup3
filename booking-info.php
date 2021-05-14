@@ -57,6 +57,7 @@
                           <li><a href="enquiry-details.php">Enquiry Details</a></li>
                           <li><a href="feedback-manager.php">Feedbacks</a></li>
                         </ul>
+                        <li><a href="login.php">Logout</a></li>
                       </li>
 
         </div>
@@ -147,7 +148,6 @@
 <!-- Vendor JS Files -->
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/purecounter/purecounter.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 

@@ -136,6 +136,7 @@
                 <!-- Wrapper for carousel items -->
                 <div class="carousel-inner">
                     <div class="row mt-5">
+                    
                     <?php
     require_once('connection.php');
     $q = "SELECT * FROM userreview ORDER BY userreview.id DESC";
@@ -144,7 +145,8 @@
     if(mysqli_num_rows($run) > 0){
         while($row = mysqli_fetch_array($run)){
   ?>
-    <a class="col-lg-1" type="button" data-bs-target="#ratings" data-bs-slide="prev"> <box-icon type='solid' name='chevron-left-square'></box-icon> </a>
+    <div class="col-lg-1">
+    </div>
         <div class="col-lg-5">
         <h2><?php echo $row['name']; ?></h2>
         <i class="star-ratings-css" title="<?php echo $row['rating']; ?>"></i>
@@ -157,8 +159,8 @@
         }
     }
   ?>
-                        <!-- Carousel controls -->
-                        <a class="col-lg-1" type="button" data-bs-target="#ratings" data-bs-slide="next"> <i class="bx bx-chevron-right"></a>
+                       
+                        
                     </div>
         </section>
 
@@ -186,11 +188,11 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Contact</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Offer Feedback</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="index.php">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about.php">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services.php">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.php">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="feedback.php">Offer Feedback</a></li>
                         </ul>
                     </div>
 
@@ -236,7 +238,6 @@
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
     <script src="assets/vendor/purecounter/purecounter.js"></script>
     <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 

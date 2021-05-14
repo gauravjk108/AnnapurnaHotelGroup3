@@ -49,7 +49,7 @@
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="#">All rooms</a></li>
+                    <li><a href="all-room.php">All rooms</a></li>
                     <li class="dropdown"><a class="active" href="#"><span>Form Information</span><i class="bi bi-chevron-down"></i></a>
                         <ul>
                           <li><a href="booking-info.php">Bookings</a></li>
@@ -57,6 +57,7 @@
                           <li><a href="enquiry-details.php">Enquiry Details</a></li>
                           <li><a class="active" href="feedback-manager.php">Feedbacks</a></li>
                         </ul>
+                        <li><a href="login.php">Logout</a></li>
                       </li>
 
         </div>
@@ -139,7 +140,6 @@
 <!-- Vendor JS Files -->
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="assets/vendor/purecounter/purecounter.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 

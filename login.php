@@ -48,7 +48,7 @@
               <div class="container">
                 <h2>Admin Login</h2>
                 <div class="text-center text-md-start" >
-                   <a href="index.html" style="color: white;"> <i class="bx bx-chevron-left"></i>Back to home</a>
+                   <a href="index.php" style="color: white;"> <i class="bx bx-chevron-left"></i>Back to home</a>
                 </div>
               </div>
             </div><!-- End Breadcrumbs -->
@@ -80,10 +80,10 @@ if(isset($_POST['submit'])){
       <div class="row">
           <div class="col-md-4"></div>
           <div class="col-md-4">
-              <form class="form-signin animated shake" action="" method="post">
-                <label for="inputEmail" class="sr-only">Username</label>
+              <form  action="" method="post" class = "php-email-form">
+                
                 <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required autofocus>
-                <label for="inputPassword" class="sr-only">Password</label>
+               
                 <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
                 <div class="checkbox">
                   <label>
@@ -94,7 +94,7 @@ if(isset($_POST['submit'])){
                       ?>
                   </label>
                 </div>
-                <input type="submit" name="submit" value="Sign In" class="btn btn-lg btn-primary btn-block">
+                <input type="submit" name="submit" value="Sign In" class="login-btn form-control">
               </form>
           </div>
           <div class="col-md-4"></div>
@@ -122,7 +122,7 @@ if(isset($_POST['submit'])){
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+ 
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
