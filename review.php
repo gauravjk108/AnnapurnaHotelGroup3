@@ -138,18 +138,18 @@
                     <div class="row mt-5">
                     <?php
     require_once('connection.php');
-    $q = "SELECT * FROM userreview ORDER BY userreview.id ASC";
+    $q = "SELECT * FROM userreview ORDER BY userreview.id DESC";
     $run = mysqli_query($conn, $q);
     $count = 0;
     if(mysqli_num_rows($run) > 0){
         while($row = mysqli_fetch_array($run)){
   ?>
-                        <a class="col-lg-1" type="button" data-bs-target="#ratings" data-bs-slide="prev"> <box-icon type='solid' name='chevron-left-square'></box-icon> </a>
-                        <div class="col-lg-5">
-                            <h2><?php echo $row['name']; ?></h2>
-                            <i class="star-ratings-css" title="<?php echo $row['rating']; ?>"></i>
-                            <p><?php echo $row['review']; ?></p>
-                        </div>
+    <a class="col-lg-1" type="button" data-bs-target="#ratings" data-bs-slide="prev"> <box-icon type='solid' name='chevron-left-square'></box-icon> </a>
+        <div class="col-lg-5">
+        <h2><?php echo $row['name']; ?></h2>
+        <i class="star-ratings-css" title="<?php echo $row['rating']; ?>"></i>
+                <p><?php echo $row['review']; ?></p>
+                </div>
                        
 
 
