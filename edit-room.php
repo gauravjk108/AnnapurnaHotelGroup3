@@ -57,6 +57,7 @@
                             <li><a href="enquiry-details.php">Enquiry Details</a></li>
                             <li><a class="active" href="feedback-manager.php">Feedbacks</a></li>
                         </ul>
+			    <li><a href="logout.php">Logout</a></li>
                     </li>
 
         </div>
