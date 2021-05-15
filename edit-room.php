@@ -6,8 +6,9 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Edit Room | Annapurna Hotel</title>
@@ -36,18 +37,116 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
+
 <body>
-	<h2>Edit</h2>
-	<form method="POST" action="update.php?id=<?php echo $id; ?>">
-		<label>Room Title:</label><input type="text" value="<?php echo $row['title']; ?>" name="title">
-		<label>Price:</label><input type="text" value="<?php echo $row['price']; ?>" name="price">
-        <label>Description:</label><input type="text" value="<?php echo $row['description']; ?>" name="description">
-        <label>Feature1:</label><input type="text" value="<?php echo $row['feature1']; ?>" name="feature1">
-        <label>Feature2:</label><input type="text" value="<?php echo $row['feature2']; ?>" name="feature2">
-        <label>Feature3:</label><input type="text" value="<?php echo $row['feature3']; ?>" name="feature3">
-        <label>Feature4:</label><input type="text" value="<?php echo $row['feature4']; ?>" name="feature4">
-		<input type="submit" name="submit">
-		
-	</form>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html">Hotel Admin</a></h1>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">All rooms</a></li>
+                    <li class="dropdown"><a class="active" href="#"><span>Form Information</span><i
+                                class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="booking-info.html">Bookings</a></li>
+                            <li><a href="contact-details.html">Contact Details</a></li>
+                            <li><a href="enquiry-details.html">Enquiry Details</a></li>
+                            <li><a class="active" href="feedback-manager.html">Feedbacks</a></li>
+                        </ul>
+                    </li>
+
+        </div>
+    </header><!-- End Header -->
+    <main>
+        <div class="breadcrumbs" data-aos="fade-in">
+            <div class="container">
+                <h2>Edit Room Item</h2>
+                <p>Make necessary changes.</p>
+            </div>
+        </div>
+        <section class="contact">
+            <div class="container" data-aos="fade-up">
+                <form method="POST" action="update.php?id=<?php echo $id; ?>" role="form" class="php-email-form">
+                    <div class="row mt-5">
+                        <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-md-9 form-group mt-3">
+                                    <p>Feature 1:</p>
+                                    <input type="text" class="form-control" value="<?php echo $row['feature1']; ?>"
+                                        name="feature1">
+                                </div>
+                                <div class="col-md-9 form-group mt-3">
+                                    <p>Feature 2:</p>
+                                    <input type="text" class="form-control" value="<?php echo $row['feature2']; ?>"
+                                        name="feature2">
+                                </div>
+                                <div class="col-md-9 form-group mt-3">
+                                    <p>Feature 3:</p>
+                                    <input type="text" class="form-control" value="<?php echo $row['feature3']; ?>"
+                                        name="feature3">
+                                </div>
+                                <div class="col-md-9 form-group mt-3">
+                                    <p>Feature 4:</p>
+                                    <input type="text" class="form-control" value="<?php echo $row['feature4']; ?>"
+                                        name="feature4">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 mt-5 mt-lg-0">
+                            <div class="row">
+                                <div class="col-md-6 form-group mt-3">
+                                    <p>Room Title:</p>
+                                    <input type="text" class="form-control" value="<?php echo $row['title']; ?>"
+                                        name="title">
+                                </div>
+                                <div class="col-md-6 form-group mt-3">
+                                    <p>Price:</p>
+                                    <input type="text" class="form-control" value="<?php echo $row['price']; ?>"
+                                        name="price">
+                                </div>
+                                <div class="form-group mt-3">
+                                    <p>Description:</p>
+                                    <textarea class="form-control" rows="8" name="description"><?php echo $row['description']; ?>
+                        </textarea>
+                                </div>
+                                <div class="text-center mt-3"><button type="submit" name="submit">Make Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="container d-md-flex py-4">
+
+                <div class="me-md-auto text-center text-md-start">
+                    <div class="copyright">
+                        &copy; Copyright <strong><span>Annapurna Hotel Pvt. Ltd.</span></strong>. All Rights Reserved
+                    </div>
+                </div>
+                <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                </div>
+            </div>
+        </footer><!-- End Footer -->
+
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/aos/aos.js"></script>
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/vendor/purecounter/purecounter.js"></script>
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
+
+    </main>
 </body>
+
 </html>
