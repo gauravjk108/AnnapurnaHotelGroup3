@@ -145,8 +145,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Reviews</h2>
-          <p>What customers have to say</p>
+          <h2>Testimonials</h2>
+          <p>What our featured guests have to say about us.</p>
         </div>
 
         <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
