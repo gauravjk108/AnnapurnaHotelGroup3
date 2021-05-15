@@ -47,15 +47,15 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">All rooms</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="all-room.php">All rooms</a></li>
                     <li class="dropdown"><a class="active" href="#"><span>Form Information</span><i
                                 class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="booking-info.html">Bookings</a></li>
-                            <li><a href="contact-details.html">Contact Details</a></li>
-                            <li><a href="enquiry-details.html">Enquiry Details</a></li>
-                            <li><a class="active" href="feedback-manager.html">Feedbacks</a></li>
+                            <li><a href="booking-info.php">Bookings</a></li>
+                            <li><a href="contact-details.php">Contact Details</a></li>
+                            <li><a href="enquiry-details.php">Enquiry Details</a></li>
+                            <li><a class="active" href="feedback-manager.php">Feedbacks</a></li>
                         </ul>
                     </li>
 
